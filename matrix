@@ -1,0 +1,40 @@
+def printM(matrix):
+    for i in range(len(matrix)):
+        for j in range(len(matrix[i])):
+            print( "{:4d}".format(matrix[i][j]),end = "")
+        print()
+
+import random  
+def creatArray():
+    print('Input first index matrix: ')
+    x = int(input())
+    print('Input second index matrix: ')
+    y = int(input())
+    array = []
+    for i in range(x):
+        array.append([])
+        for j in range(y):
+            array[i].append(random.randint(0,100))
+    return array
+def summ():
+    A = creatArray()
+    printM(A)
+    B = creatArray()
+    printM(B)
+    for i in range(len(A)):
+        for j in range(len(A[i])):
+            A[i][j] = A[i][j] + B[i][j]
+    return A
+def umnozhit():
+    A = creatArray()
+    printM(A)
+    B = creatArray()
+    printM(B)
+    for i in range(len(A)):
+        for j in range(len(A[i])):
+            A[i][j] = A[i][j] * B[i][j]
+    return A
+
+A=umnozhit()
+print(A)
+    
